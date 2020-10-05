@@ -1,0 +1,37 @@
+﻿<Window x:Class="Prism_Tutorial.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:local="clr-namespace:Prism_Tutorial.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Background="Black">
+            <ContentControl prism:RegionManager.RegionName="SubRegion" Margin="5"/>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            <ContentControl prism:RegionManager.RegionName="YediRegion"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="응애~" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Content="서브 모듈" Margin="26,32,272.8,129.6"/>
+        </Grid>
+
+        <Button Grid.Column="0" Grid.Row="1" Margin="20" Command="{Binding SuperCommand}" CommandParameter="SubView"/>
+
+    </Grid>
+</Window>

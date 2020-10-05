@@ -1,0 +1,14 @@
+﻿<Window x:Class="PriBack.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:local="clr-namespace:PriBack"
+        >
+    <Grid>
+        <ContentControl prism:RegionManager.RegionName="ContentRegion"/>
+        <ProgressBar Maximum="100" Minimum="0" Height="30" Width="200" Margin="83,156,478.6,319.6"/>
+        <Button Content="Start" Height="20" Width="40" Margin="317,166,404.6,319.6" Command="{Binding StartWorkCommand}"/>
+    </Grid>
+</Window>
